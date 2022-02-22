@@ -1,0 +1,40 @@
+env:
+  browser: true
+  es6: true
+  node: true
+
+extends:
+  - airbnb-typescript
+  - prettier
+
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  project: ./tsconfig.json
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    ecmaVersion: 2021
+    sourceType: module
+
+plugins:
+  - prettier
+  - jest
+  - react
+  - "@typescript-eslint"
+  - simple-import-sort
+
+rules:
+  prettier/prettier:
+    - error
+    - singleQuote: true
+      trailingComma: all
+      printWidth: 120
+  "@typescript-eslint/no-unused-vars": error
+  "@typescript-eslint/indent": off
+  import/extensions: off
+  import/no-extraneous-dependencies: off
+  simple-import-sort/imports: error
+  simple-import-sort/exports: error
+
+
+
