@@ -32,7 +32,7 @@ make prod
 
     ```sh
     # опционально установить
-    npx pnpm add -g pnpm
+    npx add -g pnpm
     pnpm install
     pnpm dev
     ```
