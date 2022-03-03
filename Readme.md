@@ -52,7 +52,26 @@ make prod
 
 - React
 - Typescript
+- [Redux toolkit](https://redux-toolkit.js.org/)
 - PostCss (для vscode нужен [плагин](https://marketplace.visualstudio.com/items?itemName=csstools.postcss))
 - [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env) Все модные фичи в 1 месте
 - [CssModules](https://github.com/css-modules/css-modules)
 - сборщик [Vite](https://vitejs.dev/) (Вит)
+
+
+HOW TO:
+<details>
+    <summary>Создать простой редьюссер</summary>
+
+    В папке `store/slices` соласно [документации](https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-state-slice) toolkit создать файл
+
+    Добавить редьюссер в `store.ts` в `configureStore`
+</details>
+
+<details>
+    <summary>Создать редьюссер для API эндпоинта</summary>
+
+    В папке `services/api/` соласно [документации](https://redux-toolkit.js.org/tutorials/rtk-query#setting-up-your-store-and-api-service) rtk-query создать файл
+
+    Добавить редьюссер в `store.ts` в `configureStore` и обавить мидлвару тудаже
+</details>
