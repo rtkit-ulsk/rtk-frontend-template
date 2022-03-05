@@ -59,7 +59,29 @@ make prod
 - сборщик [Vite](https://vitejs.dev/) (Вит)
 
 
-HOW TO:
+## Генерация кода
+Для упрощения написания ежедневной рутины есть код генерации:
+- api
+- component
+- container
+- page
+- slice
+
+Для генерации нужно в консоле выполнить:
+```sh
+pnpm gen [сущность] new [имя]
+// ex:
+pnpm gen api new user
+# Loaded templates: _templates
+    #    added: src/services/api/user.api.ts
+    #   inject: src/store/store.ts
+    #   inject: src/store/store.ts
+    #   inject: src/store/store.ts
+```
+
+
+
+## HOW TO:
 <details>
     <summary>Создать простой редьюссер</summary>
 
