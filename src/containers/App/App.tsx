@@ -1,20 +1,13 @@
-import Button from 'components/Button';
+import Counter from 'containers/Counter';
 import PokemonContainer from 'containers/PokemonContainer';
-import { useDispatch } from 'react-redux';
-import { countSelector } from 'store/selectors/counterSelectors';
-import { decrement, increment } from 'store/slices/counterSlice';
+import ReduxProvider from 'store/ReduxProvider';
 
 const App = () => {
-  const count = countSelector();
-  const dispatch = useDispatch();
   return (
-    <div>
-      Application: ${count}
-      <br />
-      <Button onClick={() => dispatch(increment())}>+1</Button>
-      <Button onClick={() => dispatch(decrement())}>-1</Button>
+    <ReduxProvider>
+      <Counter />
       <PokemonContainer />
-    </div>
+    </ReduxProvider>
   );
 };
 

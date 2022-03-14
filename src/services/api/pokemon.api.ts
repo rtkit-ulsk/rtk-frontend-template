@@ -9,10 +9,12 @@ export const pokemonApi = createApi({
   baseQuery: createBaseQuery(),
   endpoints: builder => ({
     getPokemonByName: builder.query<Pokemon, string>({
-      query: apiUrl.pokemonByName,
+      query(name) {
+        return { url: apiUrl.pokemonByName(name), method: 'GET' };
+      },
     }),
     getListOfPokemons: builder.query<BaseResponse<Pokemon>, void>({
-      query: apiUrl.pokemon,
+      query: () => ({ url: apiUrl.pokemon(), method: 'GET' }),
     }),
   }),
 });

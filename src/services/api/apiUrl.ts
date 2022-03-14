@@ -1,6 +1,7 @@
 export const BASE_API_URL = 'https://pokeapi.co/api/v2/';
 
 export const apiUrl = {
+  BASE_API_URL,
   pokemon() {
     return 'pokemon';
   },
