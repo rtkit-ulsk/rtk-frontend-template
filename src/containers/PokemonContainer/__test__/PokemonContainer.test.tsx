@@ -1,17 +1,8 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import App from 'containers/App';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-import { apiUrl } from 'services/api/apiUrl';
-import { BaseResponse, Pokemon } from 'services/api/types';
+import { pokemonsListMock } from 'test-utils/__mocks__/api';
 import { createPokemonsList } from 'test-utils/fixtures/pokemons-fixtures';
 import { Queries } from 'test-utils/test.types';
-
-const server = setupServer();
-
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
 
 const buildUi = (queries: Queries) => {
   return {
@@ -21,30 +12,16 @@ const buildUi = (queries: Queries) => {
   };
 };
 
-describe('PokemonContainer', () => {
+describe.only('PokemonContainer', () => {
   it('renders correctly', () => {
     const queries = render(<App />);
     const ui = buildUi(queries);
     expect(ui.loadButton).toBeInTheDocument();
   });
-  it('load pokemons', async () => {
+  it.only('load pokemons', async () => {
     const pokemonsListFixture = createPokemonsList();
-    server.use(
-      rest.get<null, Record<string, string>, BaseResponse<Pokemon>>(
-        `${apiUrl.BASE_API_URL}${apiUrl.pokemon()}`,
-        (req, res, ctx) => {
-          return res(
-            ctx.delay(),
-            ctx.json({
-              count: pokemonsListFixture.length,
-              next: '',
-              previous: '',
-              results: pokemonsListFixture,
-            }),
-          );
-        },
-      ),
-    );
+    pokemonsListMock(pokemonsListFixture);
+
     const queries = render(<App />);
     const ui = buildUi(queries);
 
