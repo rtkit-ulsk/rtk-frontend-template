@@ -1,10 +1,10 @@
-FROM shoot88/rtk-frontend-template-dockerfile:0.1 AS build
+FROM node:16-alpine AS build
 WORKDIR /app
 COPY package.json package.json
-COPY pnpm-lock.yaml pnpm-lock.yaml
-RUN pnpm install
+COPY package-lock.json package-lock.json
+RUN npm install
 COPY . .
-RUN pnpm build
+RUN npm run build
 
 FROM nginx:1.19-alpine
 COPY --from=build /app/dist /opt/site

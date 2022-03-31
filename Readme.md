@@ -24,19 +24,7 @@ make sh
 make prod
 ```
 
-В качестве пекедж менеджера используется [pnpm](https://pnpm.io/)
-
-<details>
-    <summary>Без докера</summary>
-    Если не хочется заморачиваться с докером, то можно разрабатывать на своей тачке, для этого нужно установить зависимости и стартануть разработку.
-
-    ```sh
-    # опционально установить
-    npx add -g pnpm
-    pnpm install
-    pnpm dev
-    ```
-</details>
+В качестве пекедж менеджера используется npm
 <hr>
 Для продакшена создается контейнер со статикой и простым nginx конфигом (девопсы будут довольны)
 
@@ -69,9 +57,9 @@ make prod
 
 Для генерации нужно в консоле выполнить:
 ```sh
-pnpm gen [сущность] new [имя]
+npm run gen [сущность] new [имя]
 // ex:
-pnpm gen api new user
+npm run gen api new user
 # Loaded templates: _templates
     #    added: src/services/api/user.api.ts
     #   inject: src/store/store.ts
