@@ -24,7 +24,7 @@ make sh
 make prod
 ```
 
-В качестве пекедж менеджера используется npm
+В качестве пекедж менеджера используется yarn
 <hr>
 Для продакшена создается контейнер со статикой и простым nginx конфигом (девопсы будут довольны)
 
@@ -57,9 +57,9 @@ make prod
 
 Для генерации нужно в консоле выполнить:
 ```sh
-npm run gen [сущность] new [имя]
+yarn gen [сущность] new [имя]
 // ex:
-npm run gen api new user
+yarn gen api new user
 # Loaded templates: _templates
     #    added: src/services/api/user.api.ts
     #   inject: src/store/store.ts
