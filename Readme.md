@@ -3,10 +3,10 @@
 ## Использование:
 
 ```sh
-git clone git@github.com:rtkit-ulsk/rtk-frontend-template.git <name-of-repo>
+git clone git@github.com:rtkit-ulsk/rtk-frontend-template.git <folder-name>
 ```
 
-Для удобной разработки все завернуто в Docker.
+Для удобной разработки все завернуто в [Docker](https://www.docker.com/)
 
 Для старта девелопмент приложения можно использовать
 
@@ -71,7 +71,7 @@ npm run gen api new user
 
 ## HOW TO:
 <details>
-    <summary>Создать простой редьюссер</summary>
+    <summary>Создать простой редьюсер</summary>
 
     В папке `store/slices` соласно [документации](https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-state-slice) toolkit создать файл
 
@@ -79,7 +79,7 @@ npm run gen api new user
 </details>
 
 <details>
-    <summary>Создать редьюссер для API эндпоинта</summary>
+    <summary>Создать редьюсер для API эндпоинта</summary>
 
     В папке `services/api/` соласно [документации](https://redux-toolkit.js.org/tutorials/rtk-query#setting-up-your-store-and-api-service) rtk-query создать файл
 
