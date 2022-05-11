@@ -10,7 +10,7 @@ const PokemonContainer = () => {
       <Button onClick={() => loadPokemons()}>Загрузить покемонов</Button>
       <br />
       {isLoading && <span data-testid="loader">Загрузка...</span>}
-      {error && 'Ошибка'}
+      {!!error && 'Ошибка'}
       {data && <PokemonsList data={data.results} />}
     </div>
   );

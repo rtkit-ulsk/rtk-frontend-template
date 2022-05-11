@@ -12,13 +12,13 @@ const buildUi = (queries: Queries) => {
   };
 };
 
-describe.only('PokemonContainer', () => {
+describe('PokemonContainer', () => {
   it('renders correctly', () => {
     const queries = render(<App />);
     const ui = buildUi(queries);
     expect(ui.loadButton).toBeInTheDocument();
   });
-  it.only('load pokemons', async () => {
+  it('load pokemons', async () => {
     const pokemonsListFixture = createPokemonsList();
     pokemonsListMock(pokemonsListFixture);
 
